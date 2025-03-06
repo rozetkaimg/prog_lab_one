@@ -1,30 +1,64 @@
-
-#include <iomanip>
-#include <iostream>
-
 #include "circle.h"
+#include <iostream>
+#include <iomanip>
+
+enum class ShapeOption {
+    Circle = 1,
+    Rectangle,
+    Trapezoid,
+    Exit
+};
+
+void mainCircleFunction() {
+    std::cout << "Введите радиус: " << std::endl;
+    int input_radius = 0;
+
+
+    while (!(std::cin >> input_radius) || input_radius < 0) {
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
+        std::cout << "Ошибка! Введите корректное значение радиуса (неотрицательное число): " << std::endl;
+    }
+
+    Circle myCircle(input_radius);
+    myCircle.processChoice(myCircle);
+}
+
+void mainMenu() {
+    while (true) {
+        std::cout << "Выберите фигуру:\n";
+        std::cout << "1 - Круг\n2 - Прямоугольник\n3 - Трапеция\n4 - Выход" << std::endl;
+
+        int choice;
+        if (!(std::cin >> choice)) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            std::cout << "Ошибка! Введите число от 1 до 4." << std::endl;
+            continue;
+        }
+
+        ShapeOption shape = static_cast<ShapeOption>(choice);
+
+        switch (shape) {
+            case ShapeOption::Circle:
+                mainCircleFunction();
+            break;
+            case ShapeOption::Rectangle:
+                std::cout << "Функция для прямоугольника в разработке.\n" << std::endl;
+            break;
+            case ShapeOption::Trapezoid:
+                std::cout << "Функция для трапеции в разработке.\n" << std::endl;
+            break;
+            case ShapeOption::Exit:
+                return;
+            default:
+                std::cout << "Неверный выбор! Попробуйте снова.\n" << std::endl;
+        }
+    }
+}
+
+
 int main() {
-int menu_item = 0;
-  std::cout << "Выберите:"  << std::endl;
-  std::cout << "1) Круг"  << std::endl;
-std::cin >> menu_item;
-  std::cout  << std::endl;
-
-switch (menu_item) {
-
-  case 1: {
-    std::cout << "Введите радиус:"  << std::endl;
-    int innput_radius = 0;
-    std::cin >> innput_radius;
-    Circle myCircle(innput_radius);
-    std::cout << std::fixed << std::setprecision(2);
-    std::cout << "Радиус: " << myCircle.getRadius() << std::endl;
-    std::cout << "Длина окружности: " << myCircle.getCircumference() << std::endl;
-    std::cout << "Площадь круга: " << myCircle.getArea() << std::endl;
-    std::cout << "Площадь сектора (угол 45 градусов): " << myCircle.getSectorArea(45) << std::endl;
+    mainMenu();
     return 0;
-  }
 }
-  return 0;
-}
-
