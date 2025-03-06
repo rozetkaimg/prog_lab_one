@@ -27,7 +27,6 @@ void CircOption() // в разработке
 void RectOption()
 {
     int choice;
-
     Rectangle myRectangle(5, 10);
     while (true)
     {
@@ -69,6 +68,7 @@ void RectOption()
             return;
         default:
             cout << "Неверный выбор! Попробуйте снова." << std::endl;
+            break;
         }
     }
 }
@@ -95,6 +95,9 @@ void shapeChoice() {
             TrapezOption();
         case 0:
             return;
+        default:
+            cout << "Неверный выбор! Попробуйте снова." << std::endl;
+            break;
         }
     }
 }
