@@ -78,4 +78,3 @@ void Circle::processChoice(const Circle& myCircle) {
         }
     }
 }
-
