@@ -24,7 +24,7 @@
 1.  Клонируйте репозиторий:
 
     ```bash
-    git clone <https://github.com/rozetkaimg/prog_lab_one/tree/main>
+    git clone https://github.com/rozetkaimg/prog_lab_one/tree/main
     ```
 
 2.  Скомпилируйте проект с помощью вашего компилятора C++ (например, g++):
@@ -45,8 +45,6 @@ geometry/
 ├── main.cpp
 ├── rectangle.cpp
 ├── rectangle.h
-├── triangle.cpp
-├── triangle.h
 ├── trapezoid.cpp
 ├── trapezoid.h
 ├── circle.cpp
@@ -55,8 +53,8 @@ geometry/
 
 
 * `main.cpp`: Основной файл программы.
-* `rectangle.cpp`, `triangle.cpp`, , `circle.cpp`: Файлы реализации классов.
-* `rectangle.h`, `triangle.h`, , `circle.h`: Заголовочные файлы классов.
+* `rectangle.cpp`, `trapezoid.cpp`, , `circle.cpp`: Файлы реализации классов.
+* `rectangle.h`, `trapezoid.h`, , `circle.h`: Заголовочные файлы классов.
 * `README.md`: Этот файл.
 
 ## Авторы
