@@ -2,21 +2,21 @@
 #define RECTANGLE_H
 
 class Rectangle {
-    private:
-      int width, height;
+private:
+    int width, height;
 
-    public:
-      double getHeight();
-      double getWidth();
+public:
+    Rectangle(int w, int h);
 
-      void setHeight(int height);
-      void setWidth(int width);
+    int getHeight();
+    int getWidth();
 
-      double getArea();
-      double getPerimeter();
-      double getDiagonal();
+    void setHeight(int height);
+    void setWidth(int width);
+
+    double getArea();
+    double getPerimeter();
+    double getDiagonal();
 };
 
-
-
-#endif //RECTANGLE_H
+#endif // RECTANGLE_H
