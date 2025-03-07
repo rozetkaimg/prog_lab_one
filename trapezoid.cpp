@@ -4,7 +4,7 @@
 Trapezoid::Trapezoid(int t, int b, int l, int r, int h) : top(t), bottom(b), left(l), right(r), height(h){}
 
 double Trapezoid::getArea() {
-    return 1/2*(top + bottom)* h;
+    return 0.5*(top + bottom)* height;
 }
 
 double Trapezoid::getPerimeter(){
