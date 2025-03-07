@@ -61,7 +61,35 @@ void mainCircleFunction()
 void RectOption()
 {
     int choice;
+    int newHeight;
+    int newWidth;
     Rectangle myRectangle(5, 10);
+
+    while(true){
+        cout << "Введите высоту: ";
+        cin >> newHeight;
+        if (newHeight < 0)
+        {
+            cout << "Высота не может быть отрицательной. Попробуйте снова." << endl;
+            continue;
+        }
+        break;
+    }
+    myRectangle.setHeight(newHeight);
+    while(true){
+        cout << "Введите  ширину: ";
+        cin >> newWidth;
+        if (newHeight < 0)
+        {
+            cout << "Ширина не может быть отрицательной. Попробуйте снова." << endl;
+            continue;
+        }
+        break;
+    }
+    myRectangle.setHeight(newHeight);
+    myRectangle.setWidth(newWidth);
+
+
     while (true)
     {
         cout << "Выберите, что вывести:\n";
@@ -164,6 +192,8 @@ void TrapezFunc(){
                 cout << "Верх не может быть отрицательным. Попробуйте снова." << endl;
                 break;
             }
+        case 0:
+            return;
     }
 
   }
