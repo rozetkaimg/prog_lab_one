@@ -64,7 +64,6 @@ void RectOption()
     int choice;
     int newHeight;
     int newWidth;
-    Rectangle myRectangle(5, 10);
 
     while(true){
         cout << "Введите высоту: ";
@@ -76,20 +75,18 @@ void RectOption()
         }
         break;
     }
-    myRectangle.setHeight(newHeight);
     while(true){
-        cout << "Введите  ширину: ";
-        cin >> newHeight;
-        if (newHeight < 0)
+        cout << "Введите ширину: ";
+        cin >> newWidth;
+        if (newWidth < 0)
         {
             cout << "Ширина не может быть отрицательной. Попробуйте снова." << endl;
             continue;
         }
         break;
     }
-    myRectangle.setHeight(newHeight);
-    myRectangle.setWidth(newWidth);
 
+    Rectangle myRectangle(newWidth, newHeight);
 
     while (true)
     {
@@ -116,7 +113,6 @@ void RectOption()
             cout << "Площадь: " << myRectangle.getArea() << endl;
             break;
         case SetHeight:
-            int newHeight;
             cout << "Введите новую высоту: ";
             cin >> newHeight;
             if (newHeight < 0)
@@ -128,7 +124,6 @@ void RectOption()
             cout << "Высота изменена на " << myRectangle.getHeight() << endl;
             break;
         case SetWidth:
-            int newWidth;
             cout << "Введите новую ширину: ";
             cin >> newWidth;
             if (newWidth < 0)
@@ -147,6 +142,7 @@ void RectOption()
         }
     }
 }
+
 void TrapezFunc(){
     int choice;
     Trapezoid myTrapezoid(5, 10, 5, 10, 5);
@@ -227,13 +223,13 @@ void TrapezFunc(){
             {
                 cout << "Высота не может быть отрицательным. Попробуйте снова." << endl;
                 break;
-            }   
+            }
         case 0:
             return;
         default:
             cout << "Неверный выбор! Попробуйте снова." << endl;
             break;
-            
+
     }
 
   }
