@@ -1,5 +1,6 @@
 #include "circle.h"
 #include "rectangle.h"
+#include "trapezoid.h"
 #include <iostream>
 #include <iomanip>
 
