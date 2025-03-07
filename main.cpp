@@ -78,7 +78,7 @@ void RectOption()
     myRectangle.setHeight(newHeight);
     while(true){
         cout << "Введите  ширину: ";
-        cin >> newWidth;
+        cin >> newHeight;
         if (newHeight < 0)
         {
             cout << "Ширина не может быть отрицательной. Попробуйте снова." << endl;
@@ -130,7 +130,7 @@ void RectOption()
             int newWidth;
             cout << "Введите новую ширину: ";
             cin >> newWidth;
-            if (newHeight < 0)
+            if (newWidth < 0)
             {
                 cout << "Ширина не может быть отрицательной. Попробуйте снова." << endl;
                 break;
