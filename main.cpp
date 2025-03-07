@@ -16,14 +16,14 @@ enum class ShapeOption
 
 enum RectFunc
 {
-    GetHeight = 1,
+    SetHeight = 1,
+    SetWidth,
+    GetHeight,
     GetWidth,
     GetPerimeter,
     GetDiagonal,
     GetArea,
-    SetHeight,
-    SetWidth,
-};
+  };
 
 enum trapFunc
 {
@@ -66,7 +66,7 @@ void RectOption()
     {
         cout << "Выберите, что вывести:\n";
         cout <<
-            "1 - Высоту\n2 - Ширину\n3 - Периметр\n4 - Диагональ\n5 - Площадь\n6 - Ввести Высоту\n7 - Ввести Ширину\n0 - Выйти"
+            "1 - Ввести Высоту\n2 - Ввести Ширину\n3 - Высоту\n4 - Ширину\n5 - Периметр\n6 - Диагональ\n7 - Площадь\n0 - Выйти"
             << endl;
         cin >> choice;
         switch (choice)
@@ -118,6 +118,7 @@ void RectOption()
         }
     }
 }
+
 void TrapezFunc(){
     int choice;
     Trapezoid myTrapezoid(5, 10, 5, 10, 5);
