@@ -25,6 +25,23 @@ enum RectFunc
     SetWidth,
 };
 
+enum trapFunc
+{
+    GetTrTop = 1,
+    GetTrBottom,
+    GetTrLeft,
+    GetTrRight,
+    GetTrHeight,
+    GetTrArea,
+    GetTrPerimeter,
+    GetTrMidline,
+    SetTrTop,
+    SetTrBottom,
+    SetTrLeft,
+    SetTrRight,
+    SetTrHeight,
+};
+
 void mainCircleFunction()
 {
     cout << "Введите радиус: " << endl;
@@ -101,6 +118,55 @@ void RectOption()
         }
     }
 }
+void TrapezFunc(){
+    int choice;
+    Trapezoid myTrapezoid(5, 10, 5, 10, 5);
+    while (true)
+    {
+        cout << "Выберите, что вывести:\n";
+        cout <<
+            "1 - Верх\n2 - Низ\n3 - Лево\n4 - Право\n5 - Высота\n6 - Площадь\n7 - Периметр\n8 - Средняя линия\n9 - Ввести Верх\n10 - Ввести Низ\n11 - Ввести Лево\n12 - Ввести Право\n13 - Ввести Высоту\n0 - Выйти"
+            << endl;
+        cin >> choice;
+        switch (choice)
+        {
+        case 1:
+            cout << "Верх: " << myTrapezoid.getTop() << endl;
+            break;
+        case 2:
+            cout << "Низ: " << myTrapezoid.getBottom() << endl;
+            break;
+        case 3:
+            cout << "Лево: " << myTrapezoid.getLeft() << endl;
+            break;
+        case 4:
+            cout << "Право: " << myTrapezoid.getRight() << endl;
+            break;
+        case 5:
+            cout << "Высота: " << myTrapezoid.getHeight() << endl;
+            break;
+        case 6:
+            cout << "Площадь: " << myTrapezoid.getArea() << endl;
+            break;
+        case 7:
+            cout << "Периметр: " << myTrapezoid.getPerimeter() << endl;
+            break;
+        case 8:
+            cout << "Средняя линия: " << myTrapezoid.getMidline() << endl;
+            break;
+        case 9:
+            int newTop;
+            cout << "Введите новый верх: ";
+            cin >> newTop;
+            if (newTop < 0)
+            {
+                cout << "Верх не может быть отрицательным. Попробуйте снова." << endl;
+                break;
+            }
+    }
+
+  }
+}
 
 
 void mainMenu()
@@ -125,7 +191,7 @@ void mainMenu()
 
             break;
         case ShapeOption::Trapezoid:
-            cout << "Функция для трапеции в разработке.\n" << endl;
+            TrapezFunc();
             break;
         case ShapeOption::Exit:
             return;
