@@ -125,7 +125,7 @@ void TrapezFunc(){
     {
         cout << "Выберите, что вывести:\n";
         cout <<
-            "1 - Верх\n2 - Низ\n3 - Лево\n4 - Право\n5 - Высота\n6 - Площадь\n7 - Периметр\n8 - Средняя линия\n9 - Ввести Верх\n10 - Ввести Низ\n11 - Ввести Лево\n12 - Ввести Право\n13 - Ввести Высоту\n0 - Выйти"
+            "1 - Верх\n2 - Низ\n3 - Лево\n4 - Право\n5 - Высота\n6 - Площадь\n7 - Периметр\n8 - Средняя линия\n9 - Новые данные\n0 - Выйти"
             << endl;
         cin >> choice;
         switch (choice)
@@ -134,7 +134,7 @@ void TrapezFunc(){
             cout << "Верх: " << myTrapezoid.getTop() << endl;
             break;
         case 2:
-            coudt << "Низ: " << myTrapezoid.getBottom() << endl;
+            cout << "Низ: " << myTrapezoid.getBottom() << endl;
             break;
         case 3:
             cout << "Лево: " << myTrapezoid.getLeft() << endl;
@@ -161,9 +161,12 @@ void TrapezFunc(){
             if (newTop < 0)
             {
                 cout << "Верх не может быть отрицательным. Попробуйте снова." << endl;
-                break;
+                break;    
             }
-        case 10:
+            
+
+            
+            
             int newBottom;
             cout << "Введите новый низ: ";
             cin >> newBottom;
@@ -172,7 +175,7 @@ void TrapezFunc(){
                 cout << "Низ не может быть отрицательным. Попробуйте снова." << endl;
                 break;
             }
-        case 11:
+        
             int newLeft;
             cout << "Введите новую левую сторону: ";
             cin >> newLeft;
@@ -181,7 +184,7 @@ void TrapezFunc(){
                 cout << "Сторона не может быть отрицательной. Попробуйте снова." << endl;
                 break;
             }
-        case 12:
+        
             int newRight;
             cout << "Введите новую правую сторону: ";
             cin >> newRight;
@@ -190,7 +193,7 @@ void TrapezFunc(){
                 cout << "Верх не может быть отрицательным. Попробуйте снова." << endl;
                 break;
             }
-        case 13:
+        
             int newHeight;
             cout << "Введите новую высоту: ";
             cin >> newHeight;
@@ -198,9 +201,30 @@ void TrapezFunc(){
             {
                 cout << "Высота не может быть отрицательным. Попробуйте снова." << endl;
                 break;
-            }   
-        case 0:
+            }
+            if ((newTop + newLeft + newRight) < newBottom || (newTop + newLeft + newBottom) < newRight || (newTop + newBottom + newRight) < newLeft || (newBottom + newLeft + newRight) < newTop)
+            {
+                cout << "Сумма трех сторон не может быть больше четвертой стороны. Попробуйте снова." << endl;
+                break;
+            }
+            if (newTop == newBottom)
+            {
+                cout << "ghbdn" << endl;
+                break;
+            }
+            if (abs(newLeft - newRight) >= abs(newTop - newBottom) || abs(newTop - newBottom) >= (newLeft + newRight))
+            {
+                cout << "При таких данных трапеция не существует. Попробуйте снова." << endl;
+                break;
+            }
+            myTrapezoid.setTop(newTop);
+            myTrapezoid.setBottom(newBottom);
+            myTrapezoid.setLeft(newLeft);
+            myTrapezoid.setRight(newRight);
+            myTrapezoid.setHeight(newHeight);
             break;
+        case 0:
+            return;
         default:
             cout << "Неверный выбор! Попробуйте снова." << endl;
             break;
