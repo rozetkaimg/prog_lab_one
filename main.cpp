@@ -209,7 +209,7 @@ void TrapezFunc(){
             }
             if (newTop == newBottom)
             {
-                cout << "ghbdn" << endl;
+                cout << "Основания трапеции не могут быть равны." << endl;
                 break;
             }
             if (abs(newLeft - newRight) >= abs(newTop - newBottom) || abs(newTop - newBottom) >= (newLeft + newRight))
