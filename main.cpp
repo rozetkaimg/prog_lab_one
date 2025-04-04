@@ -207,6 +207,11 @@ void TrapezFunc(){
                 cout << "Сумма трех сторон не может быть больше четвертой стороны. Попробуйте снова." << endl;
                 break;
             }
+            if ((newLeft <= newHeight) || (newRight <= newHeight))
+            {
+                cout << "Высота не может быть больше боковой стороны." << endl;
+                break;
+            }
             if (newTop == newBottom)
             {
                 cout << "Основания трапеции не могут быть равны." << endl;
